@@ -39,7 +39,7 @@ midterm-project/
 └── README.md                  # This file
 ```
 
-## 🚀 Implementation Steps
+## Implementation Steps
 
 ### 1. Data Preparation
 ```python
@@ -73,7 +73,7 @@ train_ds, test_ds = create_paired_dataset(highres_path, lowres_path, batch_size=
 - Visualization of super-resolved images
 - Performance analysis
 
-## 🛠️ Technical Requirements
+## Technical Requirements
 
 ### Dependencies
 ```python
@@ -92,7 +92,7 @@ seaborn
 - RAM: 40GB GPU Memory
 - Storage: Google Drive for model persistence
 
-## 📊 Dataset Specifications
+## Dataset Specifications
 
 - **Original Resolution**: 128×128×3
 - **Low Resolution**: 32×32×3
@@ -100,7 +100,7 @@ seaborn
 - **Train-Test Split**: 70%-30%
 - **Normalization**: [-1, 1] range for GAN training
 
-## 🔧 Key Functions
+## Key Functions
 
 ### Data Processing
 - `create_paired_dataset()`: Creates HR-LR image pairs
@@ -118,7 +118,7 @@ seaborn
 - `generate_sr_images()`: Creates super-resolved images
 - `evaluate_models()`: Compares Model A vs Model B
 
-## 📈 Performance Metrics
+## Performance Metrics
 
 ### Evaluation Metrics
 - **Accuracy**: Overall classification correctness
@@ -131,7 +131,7 @@ seaborn
 - Model A (original) typically performs better
 - Model B (SR-generated) shows SRGAN's effectiveness
 
-## 💾 Model Persistence
+## Model Persistence
 
 ### Checkpoint Strategy
 ```python
@@ -148,7 +148,7 @@ checkpoint_cb = ModelCheckpoint(
 - `classifier_a.h5`: Model A (original images)
 - `classifier_b.h5`: Model B (SR-generated images)
 
-## 🎨 Visualization
+## Visualization
 
 ### Generated Samples
 - Low-res input (32×32)
@@ -160,21 +160,13 @@ checkpoint_cb = ModelCheckpoint(
 - Validation accuracy curves
 - Model comparison charts
 
-## ⚠️ Important Notes
-
-### Google Colab Limitations
-- GPU timeouts every 12 hours
-- Checkpoint models frequently
-- Save to Google Drive regularly
-- Use `save_weights_only=True` to save space
-
 ### Training Considerations
 - SRGAN training is computationally intensive
 - Monitor for mode collapse
 - Adjust learning rates if training unstable
 - Use smaller batch sizes if memory limited
 
-## 🚦 Running the Project
+## Running the Project
 
 ### Step-by-Step Execution
 1. **Mount Google Drive** and set up paths
@@ -195,7 +187,7 @@ classifier_b = train_classifier_b()
 results = evaluate_models(classifier_a, classifier_b)
 ```
 
-## 📝 Results Interpretation
+## Results Interpretation
 
 ### Successful SRGAN Training
 - Decreasing generator and discriminator loss
@@ -220,13 +212,7 @@ results = evaluate_models(classifier_a, classifier_b)
 - Monitor loss curves for training stability
 - Regularly visualize generated samples
 
-## 📚 References
-
-1. Ledig et al. "Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network" (2017)
-2. TensorFlow SRGAN Implementation Guide
-3. Keras Transfer Learning Documentation
-
-## 👨‍💻 Author
+## Author: Eka Ebong
 - **Course**: Applied AI
 - **Assignment**: Midterm Exam
 - **Focus**: SRGAN implementation and evaluation
