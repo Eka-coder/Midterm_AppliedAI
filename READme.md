@@ -30,14 +30,21 @@ midterm-project/
 ├── data/
 │   ├── processed_128/          # Original 128×128 images
 │   └── lowres_32/              # Downscaled 32×32 images
-|   └── raw/                    # Origianl 150x150 Images 
+|   └── test/                   # Unseen dataset used to evaluate models
 ├── models/                    # Trained model weights
 ├── notebooks/                 # Notebook for classifiers A, SRGAN and B
-|   └── logs/                  # Logs for SRGAN training
-├── checkpoints/               # Model weights during training
+|   └── logs/                  # Logs for Classifier A Training training
+├── checkpoints/               # Model weights during training of SRGAN
 ├── output/                    # SRGAN-generated images
 └── README.md                  # This file
 ```
+
+Classifier A has its own file and the rest of the project is located in SRGAN and Classifier B.ipynb
+
+## Performance Analysis 
+The first classifier performed much better than the second classifier. This is likely due to both the quality of the generated pictures and the size of the datasets that 
+they were trained on. If repeating this assignment with more time, I would make more photos with the SRGAN model to have more of a baseline for comparison. In every
+metric Classifier A outperformed Classifer B.
 
 ## Implementation Steps
 
@@ -193,11 +200,6 @@ results = evaluate_models(classifier_a, classifier_b)
 - Decreasing generator and discriminator loss
 - Visually coherent super-resolved images
 - Stable training without mode collapse
-
-### Model Comparison
-- Model A baseline performance
-- Model B demonstrates SRGAN quality
-- Gap indicates SRGAN improvement potential
 
 ## 🔍 Troubleshooting
 
